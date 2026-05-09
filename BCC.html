@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BCC - Catholic College</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI'; }
+body { background:#f5f7fa; }
+
+.top-info-bar {
+    background:#1a3a8a;
+    color:white;
+    padding:10px;
+    text-align:center;
+}
+
+/* NAV */
+header {
+    background:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo { font-size:24px; font-weight:bold; color:#1a3a8a; }
+
+.nav-links { display:flex; gap:25px; list-style:none; }
+.nav-links a { text-decoration:none; color:#555; font-weight:600; cursor:pointer; }
+.nav-links a:hover { color:#1a3a8a; }
+
+/* HERO */
+.hero {
+    height:80vh;
+    background:url('Image/library6.jpg') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.hero h1 {
+    color:white;
+    font-size:45px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+}
+
+/* PAGE */
+.page { display:none; padding:60px 10%; animation:fade 0.5s; }
+.active { display:block; }
+
+@keyframes fade { from{opacity:0;} to{opacity:1;} }
+
+h2 { color:#1a3a8a; margin-bottom:20px; }
+
+/* GRID */
+.grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.grid img { width:100%; border-radius:10px; }
+
+/* CARDS */
+.cards {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card {
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+.card:hover { transform:translateY(-5px); }
+
+/* COURSE DETAILS */
+#course-details {
+    margin-top:30px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    display:none;
+}
+
+/* ABOUT EXTRA */
+.about-extra {
+    margin-top:30px;
+    line-height:1.8;
+}
+
+/* HIGHLIGHTS */
+.highlights {
+    margin-top:30px;
+}
+
+.highlights .cards .card {
+    cursor: default;
+}
+
+/* FOOTER */
+footer {
+    background:#1a3a8a;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-info-bar">
+Monday - Saturday: 8AM to 10PM | Call: +63 951 137 5498
+</div>
+
+<header>
+<div class="logo">BCC</div>
+<ul class="nav-links">
+<li><a onclick="showPage('home')">HOME</a></li>
+<li><a onclick="showPage('about')">ABOUT</a></li>
+<li><a onclick="showPage('courses')">COURSES</a></li>
+<li><a onclick="showPage('teachers')">TEACHERS</a></li>
+<li><a onclick="showPage('department')">DEPARTMENT</a></li>
+<li><a onclick="showPage('contact')">CONTACT</a></li>
+</ul>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+<div class="hero">
+<h1>Welcome to BCC Catholic College</h1>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+<h2>About BCC</h2>
+
+<div class="grid">
+<img src="Image/library6.jpg">
+<p>
+BCC Catholic College is dedicated to providing quality education that nurtures
+both intellectual growth and moral integrity. Our institution focuses on
+developing students into responsible, globally competitive professionals.
+</p>
+</div>
+
+<div class="about-extra">
+<h3>Our Mission</h3>
+<p>
+To provide accessible and high-quality education that equips students with the
+knowledge, skills, and values needed to succeed in a rapidly changing world.
+</p>
+
+<h3>Our Vision</h3>
+<p>
+To become a leading educational institution recognized for academic excellence,
+innovation, and strong community engagement.
+</p>
+
+<h3>Core Values</h3>
+<ul>
+<li>Excellence in Education</li>
+<li>Integrity and Discipline</li>
+<li>Service to Community</li>
+<li>Faith and Moral Responsibility</li>
+</ul>
+
+<h3>Why Choose BCC?</h3>
+<p>
+BCC offers modern facilities, experienced faculty members, and industry-relevant
+programs. We ensure that students gain both theoretical knowledge and practical
+skills that prepare them for real-world challenges.
+</p>
+</div>
+
+<!-- NEW: WHAT'S GOOD ABOUT BCC -->
+<div class="highlights">
+<h3>What’s Good About BCC?</h3>
+
+<div class="cards">
+<div class="card">✔ Experienced and supportive faculty members</div>
+<div class="card">✔ Modern classrooms and learning facilities</div>
+<div class="card">✔ Industry-relevant and updated curriculum</div>
+<div class="card">✔ Strong values formation and discipline</div>
+<div class="card">✔ Hands-on training and real-world experience</div>
+<div class="card">✔ Friendly and inclusive campus environment</div>
+</div>
+</div>
+
+</div>
+
+<!-- COURSES -->
+<div id="courses" class="page">
+<h2>Courses Offered</h2>
+
+<div class="cards">
+<div class="card" onclick="showCourse('bsit')">BS Information Technology (BSIT)</div>
+<div class="card" onclick="showCourse('bshm')">BS Hospitality Management</div>
+<div class="card" onclick="showCourse('bsba')">BS Business Administration</div>
+<div class="card" onclick="showCourse('criminology')">BS Criminology</div>
+<div class="card" onclick="showCourse('education')">BS Education</div>
+<div class="card" onclick="showCourse('tourism')">BS Tourism Management</div>
+<div class="card" onclick="showCourse('accounting')">BS Accounting Information System</div>
+<div class="card" onclick="showCourse('entrepreneurship')">BS Entrepreneurship</div>
+</div>
+
+<div id="course-details">
+<h3 id="course-title"></h3>
+<p id="course-description"></p>
+</div>
+</div>
+
+<!-- TEACHERS -->
+<div id="teachers" class="page">
+<h2>Our Teachers</h2>
+<div class="cards">
+<div class="card">Eghert Mijares</div>
+<div class="card">Gilbert Calderon</div>
+<div class="card">Ariel B. Solina</div>
+<div class="card">Eulalia S. Dagunan</div>
+<div class="card">Joerub Cornelio</div>
+<div class="card">Vinci Gavilleno</div>
+</div>
+</div>
+
+<!-- DEPARTMENT -->
+<div id="department" class="page">
+<h2>Departments</h2>
+<div class="cards">
+<div class="card">Information Technology Department</div>
+<div class="card">Business Administration Department</div>
+<div class="card">Hospitality & Tourism Department</div>
+<div class="card">Education Department</div>
+<div class="card">Criminology Department</div>
+<div class="card">Accounting Department</div>
+<div class="card">Entrepreneurship Department</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+<h2>Contact Us</h2>
+<p><strong>Email:</strong> info@bcc.edu.ph</p>
+<p><strong>Phone:</strong> +63 951 137 5498</p>
+<p><strong>Telephone:</strong> (032) 123-4567</p>
+<p><strong>Address:</strong> Binalbagan, Negros Occidental, Philippines</p>
+<p><strong>Office Hours:</strong> Monday - Saturday, 8:00 AM - 10:00 PM</p>
+</div>
+
+<footer>
+<p>&copy; 2026 BCC</p>
+<p style="font-size:12px;">Created by: Mark Urbano S. BSIT 3B</p>
+</footer>
+
+<script>
+function showPage(pageId) {
+document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+document.getElementById(pageId).classList.add('active');
+}
+
+function showCourse(course) {
+let title = document.getElementById("course-title");
+let desc = document.getElementById("course-description");
+let box = document.getElementById("course-details");
+
+if (course === "bsit") {
+title.innerText = "BS Information Technology (BSIT)";
+desc.innerText = "Focuses on programming, web development, networking, cybersecurity, and system development.";
+}
+else if (course === "bshm") {
+title.innerText = "BS Hospitality Management";
+desc.innerText = "Covers hotel, restaurant, and tourism operations.";
+}
+else if (course === "bsba") {
+title.innerText = "BS Business Administration";
+desc.innerText = "Focuses on marketing, finance, and management.";
+}
+else if (course === "criminology") {
+title.innerText = "BS Criminology";
+desc.innerText = "Focuses on crime detection and law enforcement.";
+}
+else if (course === "education") {
+title.innerText = "BS Education";
+desc.innerText = "Prepares future teachers and educators.";
+}
+else if (course === "tourism") {
+title.innerText = "BS Tourism Management";
+desc.innerText = "Focuses on travel and tourism industry.";
+}
+else if (course === "accounting") {
+title.innerText = "BS Accounting Information System";
+desc.innerText = "Combines accounting with IT systems.";
+}
+else if (course === "entrepreneurship") {
+title.innerText = "BS Entrepreneurship";
+desc.innerText = "Focuses on business startups and innovation.";
+}
+
+box.style.display = "block";
+}
+</script>
+
+</body>
+</html>
