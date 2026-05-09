@@ -1,1 +1,2 @@
 # BccWebsite
+BCC Catholic College is a school website designed to provide information about the institution, its courses, departments, teachers, and contact details. The website contains different sections such as Home, About, Courses, Teachers, Department, and Contact pages. It highlights the school’s mission, vision, core values, and educational programs. The design uses HTML, CSS, and JavaScript to create an interactive and user-friendly interface where users can navigate pages and view course descriptions dynamically.
